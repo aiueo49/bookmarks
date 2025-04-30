@@ -1,0 +1,12 @@
+h1 一覧
+
+= link_to '新規登録', new_bookmark_path
+
+- @bookmarks.each do |bookmark|
+  ul
+    li
+      = bookmark.title
+      | :
+      = link_to bookmark.url, bookmark.url, target: '_blank', rel: 'noopener noreferrer'
+      | ::::::::::::::
+      = link_to '削除', bookmark_path(bookmark), data: {  turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }

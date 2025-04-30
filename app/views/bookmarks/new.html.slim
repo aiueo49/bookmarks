@@ -1,0 +1,15 @@
+h1 新規登録フォーム
+
+= form_with model: @bookmark, local: true do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  
+  .field
+    = f.label :url
+    = f.text_field :url
+
+  .field
+    = f.submit '登録'
+
+= link_to '一覧へ戻る', root_path
